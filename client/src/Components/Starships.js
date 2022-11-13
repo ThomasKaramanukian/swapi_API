@@ -1,12 +1,25 @@
 import React from "react";
 import styled from "styled-components";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 const Starships = ({ data }) => {
+  const [starships, setStarships] = useState([]);
   const [showList, setShowList] = useState(false);
   const handleClick = (event) => {
     setShowList((current) => !current);
   };
+
+  useEffect(() => {
+    fetch("http://localhost:8000/starships")
+      .then((res) => {
+        return res.json();
+      })
+      .then((data) => {
+        setStarships(data.results);
+        console.log(data);
+      })
+      .catch((error) => console.log(error));
+  }, []);
 
   return (
     <>
@@ -17,7 +30,7 @@ const Starships = ({ data }) => {
         {showList && (
           <Wrapper className="wrapper">
             <ul className="list">
-              {data.map((starships, i) => {
+              {starships.map((starships, i) => {
                 return (
                   <li key={i}>
                     {starships.name} - {starships.manufacturer}.

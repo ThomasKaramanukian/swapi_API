@@ -1,12 +1,24 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import styled from "styled-components";
-import { useState } from "react";
 
 const Planets = ({ data }) => {
+  const [planets, setPlanets] = useState([]);
   const [showList, setShowList] = useState(false);
   const handleClick = (event) => {
     setShowList((current) => !current);
   };
+
+  useEffect(() => {
+    fetch("http://localhost:8000/planets")
+      .then((res) => {
+        return res.json();
+      })
+      .then((data) => {
+        setPlanets(data.results);
+        console.log(data);
+      })
+      .catch((error) => console.log(error));
+  }, []);
 
   return (
     <>
@@ -17,7 +29,7 @@ const Planets = ({ data }) => {
         {showList && (
           <Wrapper className="wrapper">
             <ul className="list">
-              {data.map((planets, i) => {
+              {planets.map((planets, i) => {
                 return (
                   <li key={i}>
                     {planets.name} - Population: {planets.population}

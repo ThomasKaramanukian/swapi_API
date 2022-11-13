@@ -5,6 +5,11 @@
   padding: 0;
 }
 
+.pList {
+  z-index: 1;
+  font-size: 20px;
+}
+
 .main {
   color: white;
 }
@@ -12,7 +17,7 @@
 .btn {
   font-family: "Alegreya Sans SC", sans-serif;
   font-size: 60px;
-  text-shadow: -1px 0 #ffe81f, 0 1px #ffe81f, 1px 0 #ffe81f, 0 -1px #ffe81f;
+  text-shadow: -1px 0 #ffe81f, 0 2px #ffe81f, 2px 0 #ffe81f, 0 -1px #ffe81f;
 }
 
 .list {
@@ -22,14 +27,63 @@
   line-height: 40px;
 }
 
-.wrapper {
-  border: 3px solid #ffe81f;
+.listSearch {
+  font-family: "Alegreya Sans SC", sans-serif;
+  list-style: none;
+  font-size: 16px;
+  line-height: 40px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: black;
+  color: white;
+  border-radius: 20px;
+  height: 200px;
+  width: 500px;
+
+  margin-bottom: 25px;
+  overflow: hidden;
+}
+
+.listSearch::after {
+  content: "";
+  position: absolute;
+  background-color: black;
+  inset: 2px;
+  border-radius: 16px;
+}
+
+.listSearch::before {
+  content: "";
+  position: absolute;
+  width: 150px;
+  height: 170%;
+  background-color: #ffe81f;
+  animation: animate 3s linear infinite;
+}
+@keyframes animate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }
 
 .hover-underline-animation {
   display: inline-block;
   position: relative;
   color: black;
+}
+
+.wrapper {
+  transform: perspective(75em) rotateX(18deg);
+  box-shadow: rgba(22, 31, 39, 0.42) 0px 60px 123px -25px,
+    rgba(19, 26, 32, 0.08) 0px 35px 75px -35px;
+  border-radius: 10px;
+  border: 1px solid;
+  border-color: rgb(213, 220, 226) rgb(213, 220, 226) rgb(184, 194, 204);
 }
 
 .hover-underline-animation::after {
@@ -49,4 +103,117 @@
 .hover-underline-animation:hover::after {
   transform: scaleX(1);
   transform-origin: bottom left;
+}
+
+.ctg {
+  font-size: 16px;
+  margin-right: 8px;
+}
+
+.searchBtn {
+  font-family: "Alegreya Sans SC", sans-serif;
+  background-color: black;
+  color: white;
+  height: 40px;
+  width: 110px;
+  border-radius: 10px;
+  font-size: 22px;
+  margin-top: 15px;
+  cursor: pointer;
+}
+
+.input {
+  margin-top: 15px;
+  width: 300px;
+  height: 35px;
+  font-family: "Alegreya Sans SC", sans-serif;
+  font-size: 22px;
+  border-radius: 10px;
+  padding-left: 15px;
+  border: 2px solid black;
+  outline: 2px solid #d4c005;
+  background-color: white;
+  box-shadow: none;
+}
+
+.input:focus {
+  outline: none;
+}
+
+.icon {
+  cursor: pointer;
+  color: white;
+  border: 2px solid #d4c005;
+  border-radius: 50%;
+  margin-bottom: -30px;
+  padding: 2px;
+}
+
+.glow-on-hover {
+  font-family: "Alegreya Sans SC", sans-serif;
+  font-size: 20px;
+  margin-top: 15px;
+  width: 220px;
+  height: 40px;
+  border: none;
+  outline: none;
+  color: #fff;
+  background: #111;
+  cursor: pointer;
+  position: relative;
+  z-index: 0;
+  border-radius: 10px;
+}
+
+.glow-on-hover:before {
+  content: "";
+  background: linear-gradient(45deg, #ff0000, #ff7300, #fffb00, #ff0000);
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  background-size: 400%;
+  z-index: -1;
+  filter: blur(5px);
+  width: calc(100% + 4px);
+  height: calc(100% + 4px);
+  animation: glowing 20s linear infinite;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+  border-radius: 10px;
+}
+
+.glow-on-hover:active {
+  color: #000;
+}
+
+.glow-on-hover:active:after {
+  background: transparent;
+}
+
+.glow-on-hover:hover:before {
+  opacity: 1;
+}
+
+.glow-on-hover:after {
+  z-index: -1;
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: #111;
+  left: 0;
+  top: 0;
+  border-radius: 10px;
+}
+
+@keyframes glowing {
+  0% {
+    background-position: 0 0;
+  }
+  50% {
+    background-position: 400% 0;
+  }
+  100% {
+    background-position: 0 0;
+  }
 }

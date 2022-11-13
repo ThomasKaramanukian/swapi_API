@@ -2,53 +2,44 @@ import React, { useState, useEffect } from "react";
 import People from "./Components/People";
 import Planets from "./Components/Planets";
 import Starships from "./Components/Starships";
+import Search from "./Components/Search";
 import "./App.css";
-import image from "./Assets/casey-horner-stars.jpg";
+import image from "./Assets/starBG.jpg";
 import styled from "styled-components";
+import { GiSpaceship } from "react-icons/gi";
 
 const App = () => {
-  const [people, setPeople] = useState([]);
-  const [planets, setPlanets] = useState([]);
-  const [starships, setStarships] = useState([]);
-  const [loading, setLoading] = useState([true]);
-
-  useEffect(() => {
-    async function fetchPeople() {
-      let res = await fetch("https://swapi.dev/api/people/?format=json");
-      let data = await res.json();
-      setPeople(data.results);
-    }
-    async function fetchPlanets() {
-      let res = await fetch("https://swapi.dev/api/planets/?format=json");
-      let data = await res.json();
-      setPlanets(data.results);
-    }
-    async function fetchStarships() {
-      let res = await fetch("https://swapi.dev/api/starships/?format=json");
-      let data = await res.json();
-      setStarships(data.results);
-    }
-
-    fetchPeople();
-    fetchPlanets();
-    fetchStarships();
-  }, []);
-
   return (
     <>
       <Wrapper className="main" style={{ backgroundImage: `url(${image})` }}>
-        <People data={people} />
-        <Starships data={starships} />
-        <Planets data={planets} />
+        <a
+          target="_blank"
+          href="https://www.flighthub.com/?campaign=24&adgroupid=120784443742&rcid=&dc=&gclid=Cj0KCQiAyMKbBhD1ARIsANs7rEGshpOlalayqG13n8oaXGgAGI1RZkFwKCB5oY8feVfCDfGJJR_EEH0aAt2AEALw_wcB"
+        >
+          <GiSpaceship className="icon" size={70} />
+        </a>
+        <div>
+          <People />
+          <Starships />
+          <Planets />
+        </div>
+
+        <Search />
       </Wrapper>
     </>
   );
 };
 
 const Wrapper = styled.div`
+  div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-direction: column;
   background: no-repeat center/cover;
   background-color: grey;
   height: 100vh;
