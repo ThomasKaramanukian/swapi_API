@@ -65,8 +65,8 @@ const Button = styled.button`
   height: 5vh;
   width: 25vh;
   margin-bottom: 10px;
-  margin-left: 15px;
-  margin-right: 15px;
+  margin-left: 25px;
+  margin-right: 25px;
   cursor: pointer;
 `;
 

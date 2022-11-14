@@ -10,6 +10,7 @@ import ship1 from "./Assets/ship1.png";
 import ship2 from "./Assets/ship2.png";
 import styled from "styled-components";
 import { GiSpaceship } from "react-icons/gi";
+import Zoom from "react-reveal/Zoom";
 
 const App = () => {
   return (
@@ -26,8 +27,12 @@ const App = () => {
           <Starships />
           <Planets />
         </div>
-        <img className="ship1" src={ship1} />
-        <img className="ship2" src={ship2} />
+        <Zoom duration={3000} left>
+          <img className="ship1" src={ship1} />
+        </Zoom>
+        <Zoom duration={3000} right>
+          <img className="ship2" src={ship2} />
+        </Zoom>
         <Search />
       </Wrapper>
     </>

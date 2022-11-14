@@ -5,6 +5,13 @@
   padding: 0;
 }
 
+html,
+body {
+  margin: 0;
+  height: 100%;
+  overflow: hidden;
+}
+
 .pList {
   z-index: 1;
   font-size: 20px;
@@ -85,6 +92,7 @@
   border-radius: 10px;
   border: 1px solid;
   border-color: rgb(213, 220, 226) rgb(213, 220, 226) rgb(184, 194, 204);
+  overflow: scroll;
 }
 
 .hover-underline-animation::after {
