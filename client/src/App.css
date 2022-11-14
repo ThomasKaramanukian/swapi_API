@@ -15,6 +15,7 @@
 }
 
 .btn {
+  z-index: 10;
   font-family: "Alegreya Sans SC", sans-serif;
   font-size: 60px;
   text-shadow: -1px 0 #ffe81f, 0 2px #ffe81f, 2px 0 #ffe81f, 0 -1px #ffe81f;
@@ -41,7 +42,6 @@
   border-radius: 20px;
   height: 200px;
   width: 500px;
-
   margin-bottom: 25px;
   overflow: hidden;
 }
@@ -78,6 +78,7 @@
 }
 
 .wrapper {
+  z-index: 10;
   transform: perspective(75em) rotateX(18deg);
   box-shadow: rgba(22, 31, 39, 0.42) 0px 60px 123px -25px,
     rgba(19, 26, 32, 0.08) 0px 35px 75px -35px;
@@ -137,7 +138,8 @@
 }
 
 .input:focus {
-  outline: none;
+  border: 2px solid black;
+  outline: 2px solid #d4c005;
 }
 
 .icon {
@@ -216,4 +218,26 @@
   100% {
     background-position: 0 0;
   }
+}
+
+.darth {
+  height: 100px;
+  border: 3px solid rgb(182, 6, 6);
+  outline: 3px solid black;
+  border-radius: 50%;
+  padding: 10px;
+}
+
+.ship1 {
+  position: absolute;
+  height: 200px;
+  top: 40px;
+  left: 100px;
+}
+
+.ship2 {
+  position: absolute;
+  height: 130px;
+  top: 70px;
+  right: 100px;
 }

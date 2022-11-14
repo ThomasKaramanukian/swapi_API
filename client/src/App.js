@@ -5,6 +5,9 @@ import Starships from "./Components/Starships";
 import Search from "./Components/Search";
 import "./App.css";
 import image from "./Assets/starBG.jpg";
+import logo from "./Assets/darth.png";
+import ship1 from "./Assets/ship1.png";
+import ship2 from "./Assets/ship2.png";
 import styled from "styled-components";
 import { GiSpaceship } from "react-icons/gi";
 
@@ -16,14 +19,15 @@ const App = () => {
           target="_blank"
           href="https://www.flighthub.com/?campaign=24&adgroupid=120784443742&rcid=&dc=&gclid=Cj0KCQiAyMKbBhD1ARIsANs7rEGshpOlalayqG13n8oaXGgAGI1RZkFwKCB5oY8feVfCDfGJJR_EEH0aAt2AEALw_wcB"
         >
-          <GiSpaceship className="icon" size={70} />
+          <img className="darth" src={logo} />
         </a>
         <div>
           <People />
           <Starships />
           <Planets />
         </div>
-
+        <img className="ship1" src={ship1} />
+        <img className="ship2" src={ship2} />
         <Search />
       </Wrapper>
     </>

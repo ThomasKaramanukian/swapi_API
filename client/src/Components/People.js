@@ -51,7 +51,7 @@ const Wrapper = styled.div`
   align-items: center;
   background-color: black;
   border-radius: 20px;
-  height: 50vh;
+  height: 60vh;
   width: 40vh;
 `;
 

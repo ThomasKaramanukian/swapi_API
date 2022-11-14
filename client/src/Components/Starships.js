@@ -51,8 +51,8 @@ const Wrapper = styled.div`
   align-items: center;
   background-color: black;
   border-radius: 20px;
-  height: 50vh;
-  width: 60vh;
+  height: 60vh;
+  width: 80vh;
 `;
 
 const Button = styled.button`
@@ -65,6 +65,8 @@ const Button = styled.button`
   height: 5vh;
   width: 25vh;
   margin-bottom: 10px;
+  margin-left: 15px;
+  margin-right: 15px;
   cursor: pointer;
 `;
 

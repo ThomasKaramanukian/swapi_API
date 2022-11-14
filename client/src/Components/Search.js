@@ -4,6 +4,7 @@ import styled from "styled-components";
 const Search = () => {
   const [person, setPerson] = useState(null);
   const [input, setInput] = useState("");
+  const [showList, setShowList] = useState(false);
 
   const searchPerson = () => {
     fetch(`http://localhost:8000/search?value=${input}`)
