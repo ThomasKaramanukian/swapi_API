@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import People from "./Components/People";
 import Planets from "./Components/Planets";
 import Starships from "./Components/Starships";
@@ -9,7 +9,6 @@ import logo from "./Assets/darth.png";
 import ship1 from "./Assets/ship1.png";
 import ship2 from "./Assets/ship2.png";
 import styled from "styled-components";
-import { GiSpaceship } from "react-icons/gi";
 import Zoom from "react-reveal/Zoom";
 
 const App = () => {
